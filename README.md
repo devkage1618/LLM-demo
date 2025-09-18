@@ -1,6 +1,5 @@
 # LLM-demo
-Langchain+FastAPI
 
-Postgresql+pgvector
+Langchain+FastAPI+Postgresql+pgvector
 
 Supabase/Railway.com
