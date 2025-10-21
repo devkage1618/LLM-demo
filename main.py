@@ -180,7 +180,7 @@ def track_ball_video(input_video="input.mp4", output_video="output.mp4", out_w=2
     output_stream.width = out_w
     output_stream.height = out_h
     output_stream.pix_fmt = 'yuv420p'
-    output_stream.options = {'preset': 'fast', 'crf': '23'}
+    output_stream.options = {'preset': 'fast', 'crf': '28'}
 
     # Reload first frame
     cap.set(cv2.CAP_PROP_POS_FRAMES, 0)
@@ -319,13 +319,13 @@ def main():
                 pass
             config[key] = value
 
-    crop_h = int(config.get('crop_h', 1440))
+    crop_h = int(config.get('crop_h', 1600))
     out_fov_x_deg = config.get('fov', 90)
     pitch_deg = config.get('pitch', -10)
     roll_max_deg = config.get('roll_max', 30)
     gamma = config.get('gamma', 1.0)
 
-    track_ball_video(input_video, output_video, out_w=2560, out_h=1440, crop_h=crop_h, out_fov_x_deg=out_fov_x_deg, pitch_deg=pitch_deg, roll_max_deg=roll_max_deg, gamma=gamma)
+    track_ball_video(input_video, output_video, out_w=1920, out_h=1080, crop_h=crop_h, out_fov_x_deg=out_fov_x_deg, pitch_deg=pitch_deg, roll_max_deg=roll_max_deg, gamma=gamma)
 
 if __name__ == "__main__":
     main()
